@@ -6,6 +6,7 @@
 
         initialize: function(path, options) {
             L.setOptions(this, options);
+            this._sourceLayer = path;
             var touchPathOptions = L.extend({}, path.options, { opacity: 0, fillOpacity: 0 });
             touchPathOptions.weight += this.options.extraWeight;
 
@@ -29,14 +30,34 @@
 
         onAdd: function(map) {
             this._layer.addTo(map);
+            if (!this.options.parentLayer) {
+                map.on('layerremove', this._onLayerRemoved, this);
+            }
         },
 
         onRemove: function(map) {
             this._map.removeLayer(this._layer);
+            if (!this.options.parentLayer) {
+                map.on('layeradd', this._onLayerAdd, this);
+            }
         },
 
         addTo: function(map) {
             map.addLayer(this);
+        },
+
+        _onLayerRemoved: function(e) {
+            if (e.layer === this._sourceLayer) {
+                map.removeLayer(this);
+                map.off('layerremove', this._onLayerRemoved, this);
+            }
+        },
+
+        _onLayerAdd: function(e) {
+            if (e.layer === this._sourceLayer) {
+                map.addLayer(this);
+                map.off('layeradd', this._onLayerAdd, this);
+            }
         }
     });
 

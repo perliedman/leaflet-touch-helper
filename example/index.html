@@ -29,6 +29,34 @@
         var geojson = L.geoJson(alSiq).addTo(map);
         L.path.touchHelper(geojson).addTo(map);
 
+        var poly = L.polygon([          
+                [
+                  30.326360294206886,
+                  35.4551339149475
+                ],
+                [
+                  30.32561943236827,
+                  35.45732259750366
+                ],
+                [
+                  30.324582216379977,
+                  35.45586347579956
+                ],
+                [
+                  30.325100825747015,
+                  35.454490184783936
+                ],
+                [
+                  30.326360294206886,
+                  35.4551339149475
+                ]
+            ])
+            .on('click', function() {
+                map.removeLayer(poly);
+            })
+            .addTo(map);
+        L.path.touchHelper(poly, {extraWeight: 50}).addTo(map);
+
         geojson.bindPopup('Hello world.');
     </script>
 </body>
