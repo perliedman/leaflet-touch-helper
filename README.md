@@ -3,9 +3,9 @@ Leaflet Touch Helper
 
 Make it easy to touch things in [Leaflet](http://leafletjs.com/).
 
-This plugin makes an invisible, touch surface around paths, like polygons or polylines, to make it easier to hit them with your clumsy fingers.
+This plugin makes an invisible touch surface around paths, like polygons or polylines, to make it easier to hit them with your clumsy fingers.
 
-Technically, this plugin adds another, larger but transparent, layer on top of the original layer, and forwards any events to the original layer.
+Technically, this plugin adds another, larger but transparent layer on top of the original layer, and forwards any events to the original layer.
 Depending on the number of layers and the complexity of your geometries, this might be expensive in terms of performance - you might want to use
 a more clever solution in those cases. For basics, this is easy and works well, though!
 
