@@ -1,6 +1,6 @@
 {
   "name": "leaflet-touch-helper",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Make it easy to touch things in Leaflet",
   "repository": "git@github.com:perliedman/leaflet-touch-helper.git",
   "homepage": "https://github.com/perliedman/leaflet-touch-helper",
