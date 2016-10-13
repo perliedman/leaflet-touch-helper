@@ -29,6 +29,7 @@
         },
 
         onAdd: function(map) {
+            this._map = map;
             this._layer.addTo(map);
             if (!this.options.parentLayer) {
                 map.on('layerremove', this._onLayerRemoved, this);
@@ -36,10 +37,9 @@
         },
 
         onRemove: function(map) {
-            this._map.removeLayer(this._layer);
-            if (!this.options.parentLayer) {
-                map.on('layeradd', this._onLayerAdd, this);
-            }
+            map.removeLayer(this._layer);
+            map.off('layerremove', this._onLayerRemoved, this);
+            this._map = null;
         },
 
         addTo: function(map) {
@@ -48,17 +48,9 @@
 
         _onLayerRemoved: function(e) {
             if (e.layer === this._sourceLayer) {
-                map.removeLayer(this);
-                map.off('layerremove', this._onLayerRemoved, this);
+                this._map.removeLayer(this);
             }
         },
-
-        _onLayerAdd: function(e) {
-            if (e.layer === this._sourceLayer) {
-                map.addLayer(this);
-                map.off('layeradd', this._onLayerAdd, this);
-            }
-        }
     });
 
     L.path = L.path || {};

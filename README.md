@@ -30,3 +30,9 @@ L.path.touchHelper(polygon, {extraWeight: 50}).addTo(map); // Super fat
 ```
 
 (Default for `extraWeight` is 25 pixels.)
+
+When the original layer is removed from the map, the touch helper layer will also be removed. Note however,
+that if you re-add the original layer, the touch helper layer _will not_ be re-added, you will have to create
+a new. (Technically, this is because there is no way to know if the layer is permanently removed or just
+temporarily; assuming that layers are always just temporarily removed would keep around _all_ created touch
+helper layers forever, which is rarely what you want.)
