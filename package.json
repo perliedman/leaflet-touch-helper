@@ -1,0 +1,15 @@
+{
+  "name": "leaflet-touch-helper",
+  "version": "1.0.0",
+  "description": "Make it easy to touch things in Leaflet",
+  "main": "leaflet-touch-helper.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["leaflet", "touch"],
+  "author": "Per Liedman <per@liedman.net>",
+  "license": "ISC"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "leaflet-touch-helper",
+  "version": "1.0.0",
+  "homepage": "https://github.com/perliedman/leaflet-touch-helper",
+  "authors": [
+    "Per Liedman <per@liedman.net> (http://www.liedman.net/)"
+  ],
+  "description": "Make it easy to touch things in Leaflet",
+  "keywords": ["leaflet", "touch"],
+  "license": "ISC",
+  "main": ["leaflet-touch-helper.js"]
+}
