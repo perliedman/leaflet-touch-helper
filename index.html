@@ -2,11 +2,13 @@
 <html>
 <head>
     <title>Leaflet Touch Helper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
     <style type="text/css">
         body {
             margin: 0;
             padding: 0;
+            font-family: sans-serif;
         }
 
         #map {
@@ -14,13 +16,42 @@
             width: 100%;
             height: 100%;
         }
+
+        #banner {
+            position: absolute;
+            left: 20%;
+            right: 20%;
+            bottom: 12px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 4px;
+            z-index: 1001;
+            text-align: center;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+        }
     </style>
 </head>
 <body>
     <div id="map"></div>
 
+    <div id="banner">
+        <h1>Leaflet Touch Helper</h1>
+        <p>
+            Make it easy to touch things in <a href="http://leafletjs.com/">Leaflet</a>
+        </p>
+        <p>
+            If you hover over the vector overlays, you can see that the hit surface
+            is larger than the actual feature. This makes them easier to hit,
+            especially using touch on small screens.
+        </p>
+        <p>
+            <a href="https://github.com/perliedman/leaflet-touch-helper/">
+                More info on GitHub!
+            </a>
+        </p>
+    </div>
+
     <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet-src.js"></script>
-    <script src="../leaflet-touch-helper.js"></script>
+    <script src="leaflet-touch-helper.js"></script>
     <script src="al-siq.js"></script>
     <script type="text/javascript">
         var map = L.map('map').setView([30.32302, 35.45786], 17);
