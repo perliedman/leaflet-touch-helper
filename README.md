@@ -1,6 +1,8 @@
 Leaflet Touch Helper
 ====================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/perliedman/leaflet-touch-helper.svg)](https://greenkeeper.io/)
+
 Make it easy to touch things in [Leaflet](http://leafletjs.com/). [See the demo](http://www.liedman.net/leaflet-touch-helper/).
 
 This plugin makes an invisible touch surface around paths, like polygons or polylines, to make it easier to hit them with your clumsy fingers.
