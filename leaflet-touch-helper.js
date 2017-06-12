@@ -23,9 +23,11 @@
                 throw new Error('Unknown layer type, neither a group or a path');
             }
 
-            this._layer.on('click dblclick mouseover mouseout mousemove', function(e) {
-                (this.options.parentLayer ? this.options.parentLayer : path).fire(e.type, e);
-            }, this);
+            if (this._layer.on) {
+                this._layer.on('click dblclick mouseover mouseout mousemove', function(e) {
+                    (this.options.parentLayer ? this.options.parentLayer : path).fire(e.type, e);
+                }, this);
+            }
         },
 
         onAdd: function(map) {
