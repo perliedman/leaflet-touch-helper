@@ -19,6 +19,7 @@
                 }, this);
             } else if (path.getLatLngs) {
                 this._layer = new path.constructor(path.getLatLngs(), touchPathOptions);
+                this._layer.feature = path.feature;
             } else {
                 throw new Error('Unknown layer type, neither a group or a path');
             }
